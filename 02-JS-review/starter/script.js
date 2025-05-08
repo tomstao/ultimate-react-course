@@ -1,3 +1,4 @@
+/*
 const data = [
   {
     id: 1,
@@ -142,3 +143,24 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
+
+ */
+// fetch('https://jsonplaceholder.typicode.com/todos/1')
+//     .then(res => res.json())
+//     .then(data => {
+//         console.log(data);
+//     });
+
+// console.log("Tao Su");
+
+async function getTodos() {
+    const res = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+    const data = await res.json();
+    console.log(data);
+    return data;
+}
+
+const todos = getTodos();
+console.log(todos);
+
+console.log("Tao Su");
