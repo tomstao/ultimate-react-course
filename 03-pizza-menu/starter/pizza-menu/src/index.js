@@ -115,7 +115,8 @@ function Footer() {
     const hour = new Date().getHours();
     const openHour = 12;
     const closeHour = 12;
-    const isOpen = hour >= openHour && hour <= closeHour;
+    // const isOpen = hour >= openHour && hour <= closeHour;
+    const isOpen = true
 
     console.log(isOpen);
 
@@ -128,7 +129,12 @@ function Footer() {
     return (
         <footer className="footer">
             {/*{new Date().toLocaleTimeString()}. Wee.'re currently open!*/}
-            {isOpen && <p>We're open until {closeHour}:00. Come visit us or order onlin</p>}
+            {isOpen && (
+                <div className="order">
+                <p>We're open until {closeHour}:00. Come visit us or order onlin</p>
+                <button className="btn">Open hour</button>
+                </div>
+            )}
         </footer>
     );
     // return React.createElement("footer", null, "We're currently open!");
